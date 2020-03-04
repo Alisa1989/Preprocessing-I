@@ -54,11 +54,130 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	font-size: 62.5%;
 }
 
-// my code
+// ---------- MY CODE ----------------
+
+//primary colors-----------------------
+@primary-color: #0A3200;
+@secondary-color: gainsboro;
+@hover-color: #379634;
+
+//units--------------------------------
+@image-height: 192px;
+@page-margin: 5vw 10vw; 
+
+//mixins-------------------------------
+.test-border {
+	border: 1px solid;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//FONTS--------------------------------
 h1 {
-	text: red;
-	font-size: 100px;
+	color: red;
+	font-size: 32px;
 } 
+
+h3 {
+	font-size: 2.4rem;
+	font-weight: bold;
+}
+
+p, a {
+	font-size: 2rem;
+}
+
+//main styling--------------------------
+
+header {
+	nav{
+		display: flex;
+		margin: 5vw 0vw 0vw 0vw;
+		justify-content: space-evenly;
+		a{
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+		}
+	}
+}
+
+.welcome {
+	.flex-center();
+	background: @secondary-color;
+	height: 70vh;
+	margin: @page-margin;
+	img{
+		height: @image-height;
+		width: 256px;
+		transform: rotate(90deg);
+		border-radius: 50px 15px;
+	}
+	div {
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		height: @image-height;
+		div {
+			button{
+				background: black;
+				color: white;
+				width: 45%;
+				padding: 5% 0; 
+				border-radius: 15px;
+
+			}
+		}
+	}
+}
+
+.second-half {
+	margin: @page-margin;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	height: 70vh;
+	
+	div {
+		display: flex;
+		flex-direction: row;
+		height: 50%;
+		justify-content: space-between;
+
+		div {
+			height: 95%;
+			flex-direction: column;
+			text-align: justify;
+			width: 45%;
+			justify-content: space-evenly;
+			align-items: flex-start;
+		}
+
+		table {
+			font-size: 2rem;
+			width: 100%;
+			height: 100px;
+		}
+	}
+	
+}
+
+footer {
+	.flex-center();
+	margin: 0 10vw;
+	background: @secondary-color;
+	padding: 2%;
+}
+
+//Questions----
+// spacing under anchors

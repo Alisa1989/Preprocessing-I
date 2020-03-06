@@ -61,13 +61,15 @@ html, body {
 // ---------- MY CODE ----------------
 
 //primary colors-----------------------
-@primary-color: #0A3200;
-@secondary-color: gainsboro;
-@hover-color: #379634;
+@primary-color: #006400;
+@secondary-color: BlanchedAlmond;
+@tertiary-color: #379634;
 
 //units--------------------------------
 @image-height: 192px;
 @page-margin: 5vw 10vw; 
+
+@standard-font-size: 2rem;
 
 //mixins-------------------------------
 .test-border {
@@ -82,7 +84,7 @@ html, body {
 
 //FONTS--------------------------------
 h1 {
-	color: red;
+	color: @primary-color;
 	font-size: 32px;
 } 
 
@@ -92,7 +94,7 @@ h3 {
 }
 
 p, a {
-	font-size: 2rem;
+	font-size: @standard-font-size;
 }
 
 //main styling--------------------------
@@ -106,6 +108,10 @@ header {
 			text-decoration: none;
 			color: black;
 			font-weight: bold;
+
+			&:hover {
+				color: @tertiary-color;
+			} 
 		}
 	}
 }
@@ -114,7 +120,13 @@ header {
 	.flex-center();
 	background: @secondary-color;
 	height: 70vh;
-	margin: @page-margin;
+	margin: 5% 10%;
+	border-radius: 15px;
+
+	@media (max-width: 500px){
+		width: 100%;
+		margin: 0;
+	}
 	img{
 		height: @image-height;
 		width: 256px;
@@ -129,30 +141,51 @@ header {
 		align-items: center;
 		height: @image-height;
 		div {
-			button{
-				background: black;
+			.contact-button{
+				background: @primary-color;
 				color: white;
 				width: 45%;
-				padding: 5% 0; 
+				height: 30%;
+				padding: 3%; 
 				border-radius: 15px;
+				text-decoration: none;
 
+				&:hover {
+					background: @tertiary-color;
+				}
 			}
 		}
 	}
 }
 
 .second-half {
-	margin: @page-margin;
+	margin: 0 10% 5% 10%;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
-	height: 70vh;
+	justify-content: space-between;
+	height: 50%;
+	font-size: @standard-font-size;
 	
-	div {
+	@media (max-width: 500px) {
+		margin: 0;
+		height: 100%;
+	}
+	
+	.about {
 		display: flex;
 		flex-direction: row;
 		height: 50%;
 		justify-content: space-between;
+		background: @tertiary-color;
+		border-radius: 15px;
+
+		@media (max-width: 500px){
+			width: 100%;
+			margin: 0;
+			flex-direction: row;
+			flex-direction: column;
+			border-radius: 0px;
+		}
 
 		div {
 			height: 95%;
@@ -160,24 +193,42 @@ header {
 			text-align: justify;
 			width: 45%;
 			justify-content: space-evenly;
-			align-items: flex-start;
-		}
+			align-items: center;
+			padding: 5% 5%;
 
+			@media (max-width: 500px){
+				width: 100%;
+			}
+		}
+	}
+	.table-class{
+		background: @secondary-color;
+		padding: 5% 5%;
+		margin: 5% 0;
+		border-radius: 15px;
+		h3 {
+			padding: 0 0 5% 0;
+		}
 		table {
 			font-size: 2rem;
 			width: 100%;
-			height: 100px;
+			// height: 100px;
+		}
+
+		@media (max-width: 500px) {
+			border-radius: 0px;
+			margin: 0;
 		}
 	}
-	
-}
+	address {
+		padding: 5% 5% 5% 5%;
+	}
+
 
 footer {
 	.flex-center();
-	margin: 0 10vw;
 	background: @secondary-color;
 	padding: 2%;
-}
 
-//Questions----
-// spacing under anchors
+}
+}

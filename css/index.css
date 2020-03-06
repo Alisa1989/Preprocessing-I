@@ -144,7 +144,7 @@ body {
   align-items: center;
 }
 h1 {
-  color: red;
+  color: #006400;
   font-size: 32px;
 }
 h3 {
@@ -165,13 +165,23 @@ header nav a {
   color: black;
   font-weight: bold;
 }
+header nav a:hover {
+  color: #379634;
+}
 .welcome {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: gainsboro;
+  background: BlanchedAlmond;
   height: 70vh;
-  margin: 5vw 10vw;
+  margin: 5% 10%;
+  border-radius: 15px;
+}
+@media (max-width: 500px) {
+  .welcome {
+    width: 100%;
+    margin: 0;
+  }
 }
 .welcome img {
   height: 192px;
@@ -187,44 +197,89 @@ header nav a {
   align-items: center;
   height: 192px;
 }
-.welcome div div button {
-  background: black;
+.welcome div div .contact-button {
+  background: #006400;
   color: white;
   width: 45%;
-  padding: 5% 0;
+  height: 30%;
+  padding: 3%;
   border-radius: 15px;
+  text-decoration: none;
+}
+.welcome div div .contact-button:hover {
+  background: #379634;
 }
 .second-half {
-  margin: 5vw 10vw;
+  margin: 0 10% 5% 10%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  height: 70vh;
+  justify-content: space-between;
+  height: 50%;
+  font-size: 2rem;
 }
-.second-half div {
+@media (max-width: 500px) {
+  .second-half {
+    margin: 0;
+    height: 100%;
+  }
+}
+.second-half .about {
   display: flex;
   flex-direction: row;
   height: 50%;
   justify-content: space-between;
+  background: #379634;
+  border-radius: 15px;
 }
-.second-half div div {
+@media (max-width: 500px) {
+  .second-half .about {
+    width: 100%;
+    margin: 0;
+    flex-direction: row;
+    flex-direction: column;
+    border-radius: 0px;
+  }
+}
+.second-half .about div {
   height: 95%;
   flex-direction: column;
   text-align: justify;
   width: 45%;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
+  padding: 5% 5%;
 }
-.second-half div table {
+@media (max-width: 500px) {
+  .second-half .about div {
+    width: 100%;
+  }
+}
+.second-half .table-class {
+  background: BlanchedAlmond;
+  padding: 5% 5%;
+  margin: 5% 0;
+  border-radius: 15px;
+}
+.second-half .table-class h3 {
+  padding: 0 0 5% 0;
+}
+.second-half .table-class table {
   font-size: 2rem;
   width: 100%;
-  height: 100px;
 }
-footer {
+@media (max-width: 500px) {
+  .second-half .table-class {
+    border-radius: 0px;
+    margin: 0;
+  }
+}
+.second-half address {
+  padding: 5% 5% 5% 5%;
+}
+.second-half footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10vw;
-  background: gainsboro;
+  background: BlanchedAlmond;
   padding: 2%;
 }
